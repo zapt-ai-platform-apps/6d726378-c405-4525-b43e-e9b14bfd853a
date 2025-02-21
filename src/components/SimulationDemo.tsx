@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { runSimulation } from '../models/simulation';
+import * as Sentry from '@sentry/browser';
 
 export function SimulationDemo(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -10,11 +12,11 @@ export function SimulationDemo(): JSX.Element {
     setResult('');
     try {
       console.log('Starting simulation...');
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      const simulationResult = "Optimal configuration achieved: HD Quality, Low Latency";
+      const simulationResult = await runSimulation();
       setResult(simulationResult);
       console.log('Simulation completed:', simulationResult);
     } catch (error) {
+      Sentry.captureException(error);
       console.error('Error during simulation:', error);
     } finally {
       setIsLoading(false);
