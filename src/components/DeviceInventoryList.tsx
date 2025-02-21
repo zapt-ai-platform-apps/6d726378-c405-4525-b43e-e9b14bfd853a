@@ -1,7 +1,8 @@
 import React from 'react';
+import { Device } from '../models/device';
 
 interface DeviceInventoryListProps {
-  devices: string[];
+  devices: Device[];
 }
 
 export default function DeviceInventoryList({
@@ -11,8 +12,8 @@ export default function DeviceInventoryList({
     <div className="w-full max-w-md">
       <h3 className="text-lg font-bold mb-2">Devices Inventory:</h3>
       <ul className="list-disc list-inside">
-        {devices.map((device, index) => (
-          <li key={index}>{device}</li>
+        {devices.map((device) => (
+          <li key={device.id}>{device.name}</li>
         ))}
       </ul>
     </div>

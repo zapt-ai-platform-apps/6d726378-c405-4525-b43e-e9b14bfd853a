@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import { runSimulation } from '../models/simulation';
+import { createDevice } from '../models/device';
 import * as Sentry from '@sentry/browser';
 import DeviceInputForm from './DeviceInputForm';
 import DeviceInventoryList from './DeviceInventoryList';
+import { Device } from '../models/device';
 
 export function SimulationDemo(): JSX.Element {
-  const [devices, setDevices] = useState<string[]>([]);
+  const [devices, setDevices] = useState<Device[]>([]);
   const [newDevice, setNewDevice] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<string>('');
 
   const handleAddDevice = (): void => {
-    if (newDevice.trim() === '') return;
-    setDevices([...devices, newDevice.trim()]);
-    setNewDevice('');
+    try {
+      const device = createDevice(newDevice);
+      setDevices([...devices, device]);
+      setNewDevice('');
+    } catch (error) {
+      Sentry.captureException(error);
+      console.error('Invalid device:', error);
+    }
   };
 
   const handleSimulation = async (): Promise<void> => {
@@ -21,7 +28,7 @@ export function SimulationDemo(): JSX.Element {
     setIsLoading(true);
     setResult('');
     try {
-      console.log('Starting simulation with devices:', devices);
+      console.log('Starting simulation with devices:', devices.map(d => d.name));
       const simulationResult = await runSimulation(devices);
       setResult(simulationResult);
       console.log('Simulation completed:', simulationResult);
@@ -34,7 +41,7 @@ export function SimulationDemo(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className="flex flex-col items-center space-y-4 h-full">
       <DeviceInputForm
         newDevice={newDevice}
         onNewDeviceChange={setNewDevice}
