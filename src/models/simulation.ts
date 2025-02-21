@@ -1,16 +1,17 @@
 import * as Sentry from '@sentry/browser';
 
 /**
- * Runs the simulation for the configuration.
- * Contains business logic and validations for simulation.
+ * Runs the simulation based on the provided devices inventory.
  *
+ * @param {string[]} devices - Array of device names.
  * @returns {Promise<string>} The result of the simulation.
  */
-export async function runSimulation(): Promise<string> {
+export async function runSimulation(devices: string[]): Promise<string> {
   try {
-    console.log('Running simulation in model...');
+    console.log('Running simulation in model with devices:', devices);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const simulationResult = "Optimal configuration achieved: HD Quality, Low Latency";
+    const deviceList = devices.join(', ');
+    const simulationResult = `Optimal configuration achieved for devices: ${deviceList}. Result: HD Quality with Low Latency.`;
     console.log('Simulation result from model:', simulationResult);
     return simulationResult;
   } catch (error) {

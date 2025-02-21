@@ -11,7 +11,7 @@ export default function App(): JSX.Element {
       <main className="flex-grow">
         <FeatureSection 
           title="Virtual Simulations"
-          description="Experiment with various audio and video configurations in a virtual environment without needing any physical equipment."
+          description="Experiment with various audio and video configurations interactively. Add your available devices and let our AI-powered simulation guide you to the optimal plug-and-play setup."
         >
           <SimulationDemo />
         </FeatureSection>
@@ -33,7 +33,7 @@ export default function App(): JSX.Element {
         />
       </main>
       <footer className="bg-gray-800 text-white text-center py-4">
-        <p className="text-sm">&copy; {new Date().getFullYear()} New App. All rights reserved.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} Audio & Video hacks. All rights reserved.</p>
       </footer>
       <ZaptBadge />
     </div>

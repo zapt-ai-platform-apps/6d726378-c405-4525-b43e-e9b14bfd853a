@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import { runSimulation } from '../models/simulation';
 import * as Sentry from '@sentry/browser';
+import DeviceInputForm from './DeviceInputForm';
+import DeviceInventoryList from './DeviceInventoryList';
 
 export function SimulationDemo(): JSX.Element {
+  const [devices, setDevices] = useState<string[]>([]);
+  const [newDevice, setNewDevice] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<string>('');
 
+  const handleAddDevice = (): void => {
+    if (newDevice.trim() === '') return;
+    setDevices([...devices, newDevice.trim()]);
+    setNewDevice('');
+  };
+
   const handleSimulation = async (): Promise<void> => {
-    if (isLoading) return;
+    if (isLoading || devices.length === 0) return;
     setIsLoading(true);
     setResult('');
     try {
-      console.log('Starting simulation...');
-      const simulationResult = await runSimulation();
+      console.log('Starting simulation with devices:', devices);
+      const simulationResult = await runSimulation(devices);
       setResult(simulationResult);
       console.log('Simulation completed:', simulationResult);
     } catch (error) {
@@ -24,15 +34,25 @@ export function SimulationDemo(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center space-y-4">
+      <DeviceInputForm
+        newDevice={newDevice}
+        onNewDeviceChange={setNewDevice}
+        handleAddDevice={handleAddDevice}
+      />
+      {devices.length > 0 && <DeviceInventoryList devices={devices} />}
       <button
         onClick={handleSimulation}
-        disabled={isLoading}
-        className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mb-4 disabled:opacity-50"
+        disabled={isLoading || devices.length === 0}
+        className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
       >
-        {isLoading ? 'Simulating...' : 'Start Simulation'}
+        {isLoading ? 'Simulating...' : 'Run Simulation'}
       </button>
-      {result && <div className="text-green-600 font-medium">{result}</div>}
+      {result && (
+        <div className="text-green-600 font-medium mt-4 text-center">
+          {result}
+        </div>
+      )}
     </div>
   );
 }

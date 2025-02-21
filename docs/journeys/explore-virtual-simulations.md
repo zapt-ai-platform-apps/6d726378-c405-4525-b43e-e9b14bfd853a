@@ -4,10 +4,11 @@ This journey guides you through experimenting with various audio and video confi
 
 ## Steps
 
-1. **Access the Landing Page**: Open the application to view the main hero section that highlights the Virtual Simulation Lab.
-2. **View Simulation Features**: Scroll down to the "Virtual Simulations" section to learn about AI-driven simulation capabilities.
-3. **Start a Simulation**: Click the "Start Simulation" button to run a live simulation. A loading state will appear while the simulation runs.
-4. **Review the Results**: After the simulation completes, review the optimal configuration details displayed on the screen.
-5. **Iterate as Needed**: Run multiple simulations to compare results and understand various configurations.
+1. **Access the Landing Page**: Open the application to view the main hero section that introduces Audio & Video hacks.
+2. **View Simulation Features**: Scroll down to the "Virtual Simulations" section to learn about the interactive simulation capabilities.
+3. **Add Your Audio/Video Devices**: Use the provided input field to add your available adapters, cables, and devices to your inventory.
+4. **Run Simulation**: Click the "Run Simulation" button to start the simulation. A loading state will indicate that the system is processing your configuration.
+5. **Review the Results**: After the simulation completes, review the optimal configuration details based on your provided inventory.
+6. **Iterate as Needed**: Adjust your inventory or run additional simulations to compare different setups.
 
 Enjoy experimenting and optimizing your audio and video setups virtually!
