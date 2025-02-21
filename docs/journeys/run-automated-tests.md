@@ -1,13 +1,9 @@
 # Run Automated Tests
 
-This journey explains how to automatically execute simulations to identify the best audio and video setups.
+This journey showcases how to automate testing of your configurations.
 
-## Steps
-
-1. **Navigate to the Automated Testing Section**: On the landing page, locate the "Automated Testing" section.
-2. **Understand the Process**: Read the description to understand how the system automates simulations based on pre-defined criteria.
-3. **Initiate a Test Run**: Although automated, the system may allow manual triggering of tests. Observe the simulation process and its loading state.
-4. **Monitor Results**: The system will process the test and display results showing optimal configuration details.
-5. **Review Test Metrics**: Analyze the provided metrics to determine performance indicators like latency and quality.
-
-Follow these steps to benefit from automated testing for your setups.
+1. Visit the **Automated Testing** section on the home screen.
+2. Input one or more test parameters into the form provided.
+3. Click the **Add Test Parameter** button to compile your test inputs.
+4. Once all parameters are added, click **Run Automated Tests**.
+5. Review the results to ensure that all system checks pass and your setup is optimal.

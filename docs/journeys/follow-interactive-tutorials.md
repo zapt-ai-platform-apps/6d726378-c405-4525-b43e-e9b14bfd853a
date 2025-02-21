@@ -1,13 +1,9 @@
 # Follow Interactive Tutorials
 
-This journey provides a step-by-step guide to setting up and optimizing your audio and video equipment.
+This journey provides a step-by-step interactive guide to setting up and optimizing your audio and video systems.
 
-## Steps
-
-1. **Access the Tutorials Section**: Scroll to the "Interactive Tutorials" section on the landing page.
-2. **Choose a Tutorial**: Select a tutorial that matches your current needs.
-3. **Follow the Step-by-Step Instructions**: Read through each step carefully, following on-screen prompts.
-4. **Review Helpful Tips**: Pay attention to provided tips and warnings for optimal setup.
-5. **Complete the Tutorial**: Finish the guided process to gain comprehensive knowledge and improve your setup skills.
-
-Interactive tutorials are designed to make learning intuitive and effective.
+1. Navigate to the **Interactive Tutorials** section on the home screen.
+2. Read the instructional content for the current step.
+3. Use the **Next** and **Previous** buttons to navigate through the tutorial steps.
+4. Follow along with each step and apply the recommendations to your device setup.
+5. Complete the tutorial to gain confidence in optimizing your configurations.

@@ -1,13 +1,9 @@
 # Access Real-Time Feedback
 
-This journey helps you understand how to receive instant feedback as you modify your audio and video configurations.
+This journey demonstrates how users can receive immediate feedback based on their input parameters.
 
-## Steps
-
-1. **Locate the Real-Time Feedback Section**: Find the "Real-Time Feedback" section on the landing page.
-2. **Adjust Settings**: Interact with the simulation controls or review predefined settings.
-3. **Receive Instant Analysis**: Watch as the AI provides immediate suggestions and improvements.
-4. **Implement Recommendations**: Apply the suggested configurations to see improved performance.
-5. **Experiment Continuously**: Continue adjusting parameters to achieve the best setup based on the real-time feedback.
-
-This journey ensures you receive actionable insights during your configuration process.
+1. Navigate to the **Real-Time Feedback** section on the home screen.
+2. Enter a configuration parameter in the input field provided.
+3. Click the **Get Feedback** button to process your input.
+4. Observe the feedback displayed below the button, which offers suggestions to optimize your setup.
+5. Adjust the input and re-run the feedback process as needed for a customized experience.
